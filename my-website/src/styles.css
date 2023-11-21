@@ -1,0 +1,59 @@
+*{
+
+    box-sizing: border-box;
+   
+}
+
+body{
+
+    margin: 0;
+}
+.container{
+    margin: 1rem;
+    text-align: center;
+}
+
+.nav /* selecting the nav element */
+{
+
+    background-color: #333;
+    color: white;
+    display:flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.site-tittle{
+    font-size: 2rem;
+}
+
+.nav ul /*from the nav divider i am editing the unordered list */
+{
+    padding:0;
+    margin: 0;
+    list-style-type: none; /*gets rid of spacing and the dots */
+    display: flex;
+    gap: 1rem;
+}
+
+.nav a /*selecting the anchor tags from the nav page */
+{
+    color:inherit;
+    text-decoration: none;
+    height: 100%;
+    display:flex;
+    align-items: center;
+    padding: 0.25rem
+
+
+}
+
+.nav li.active{
+
+    background-color:red;
+}
+.nav li:hover{
+    background-color: blue;
+}
