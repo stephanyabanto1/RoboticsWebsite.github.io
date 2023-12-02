@@ -24,6 +24,7 @@ const db  = mysql.createConnection({
   database        : 'roboticsinformation'
 });
 
+//missing endpont [get]
 
 app.post('/signup', (req, res) => {
     const username = req.body.username;

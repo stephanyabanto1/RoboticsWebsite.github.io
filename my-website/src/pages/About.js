@@ -1,4 +1,4 @@
-export default function About() {
+function About() {
     return (<div className="hello" >
 
    
@@ -8,3 +8,5 @@ export default function About() {
 
     )
   }
+
+  export default About;
