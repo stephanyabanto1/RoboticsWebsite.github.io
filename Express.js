@@ -3,8 +3,10 @@ const app = express();
 const port = 3001; // or any other port you prefer
 const cors = require('cors');
 const mysql = require('mysql2');
+const bodyParser = require('body-parser');
 
-
+app.use(bodyParser.urlencoded({extended: false})); //parsing urlencoded data that comes from a form 
+app.use(bodyParser.json()); //parsing json data that comes in 
 app.use(cors());
 
 
@@ -39,8 +41,7 @@ app.post('/signup', (req, res) => {
       }
     } )
     
-  // Handle your API logic here
-  res.send('Like and Suscribe: ')
+ 
  
 });
 

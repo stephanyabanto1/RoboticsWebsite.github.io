@@ -1,14 +1,7 @@
 import {useState} from 'react';
 import axios from 'axios';
-import Navbar from "./Navbar"
-import About from "./pages/About"
-import Home from "./pages/Home"
-import Members from "./pages/Members"
-import NewEvents from "./pages/NewEvents"
-import {Route, Routes } from "react-router-dom"
 
-
-function App(){
+function SignUp(){
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -23,22 +16,9 @@ function App(){
     setPassword('')
   })
  }
-
   return (
     <>
-
-<Navbar/>
-    <div className = "container">
-      <Routes > 
-        <Route path = "/" element= {<Home/>} />
-        <Route path = "/Members" element= {<Members/>} />
-        <Route path = "/NewEvents" element= {<NewEvents/>} />
-        <Route path = "/About" element= {<About/>} />
-      </Routes>
-    </div>
-
     <div>
-
     <form className = 'mx-auto border-2 p-9 md:p-12 w-72 md:w96 border-cyan-400 mt-36 h-84' onSubmit={submitHandler}>
     <h3 className = 'pb-6 text-2xl text-center text-white'> SignUp</h3>
     <label className = 'block mb-1 text-xl text-cyan-400' htmlFor='username'> Username</label>  
@@ -49,14 +29,11 @@ function App(){
     <div className = 'flex justify-between'>
         <button className='px-3 py-1 rounded-sm bg-cyan-400' type = 'button'> Cancel</button>
         <button className='px-3 py-1 rounded-sm bg-cyan-400' type = 'submit'> Submit</button>
-
     </div>
     </form>  
     </div>
-
-   
     </>
   )
 }
 
-export default App;
+export default SignUp;
