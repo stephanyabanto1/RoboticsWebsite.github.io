@@ -35,15 +35,32 @@ app.post('/signup', (req, res) => {
     //request to insert something into the database 
     db.query("INSERT INTO users (username, password) VALUES (?,?)",[username, password],(err, result) => {
       if(err){
-        console.log(err)
-      }else{
-        res.send({username: username})
-      }
+        return console.log('ERROR: ', err)
+      }  
+      console.log(result)
+      console.log("Request SUCCESS")
+      res.send({username: username, res: result})
     } )
-    
- 
- 
 });
+
+function handleCallback(err, results, fields) { //just lke the arrow function 
+  if(err){
+    return console.log(err)
+  }
+  console.log(results)
+}
+
+//server side get me everything on user table 
+app.get('/users', (req, res) => {
+  db.query("SELECT * FROM users", (err, results, fields)=> {
+    if(err){
+      return console.log(err)
+    }
+    res.send({ res: results})
+  })
+
+
+})
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

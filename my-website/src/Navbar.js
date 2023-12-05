@@ -6,12 +6,15 @@ export default function Navbar(){
     
         
     <nav className = "nav">
-        <Link to = "/" className = "site-tittle"> Site Name</Link>
+        <Link to = "/" className = "site-tittle"> Robotics Website</Link>
 
         <ul>
             <CustomLink to = "/About"> About us </CustomLink>
             <CustomLink to = "/Members"> Members </CustomLink>
             <CustomLink to = "/NewEvents"> News and Events </CustomLink>
+            <CustomLink to = "/SignIn"> Sign in</CustomLink>
+            <CustomLink to = "/SignUp"> Sign Up</CustomLink>
+       
            
         </ul>
     </nav>

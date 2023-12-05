@@ -5,7 +5,10 @@ import About from "./pages/About"
 import Home from "./pages/Home"
 import Members from "./pages/Members"
 import NewEvents from "./pages/NewEvents"
-import {Route, Routes } from "react-router-dom"
+import {Route, Routes, Outlet } from "react-router-dom"
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import Profile from './pages/Profile';
 
 
 function App(){
@@ -18,7 +21,7 @@ function App(){
   e.preventDefault()
   axios.post('http://localhost:3001/signup', {username: username, password: password})
   .then((data) => {
-    console.log(data)
+    // console.log(data)
     setUsername('')
     setPassword('')
   })
@@ -26,35 +29,18 @@ function App(){
 
   return (
     <>
-
-<Navbar/>
-    <div className = "container">
-      <Routes > 
-        <Route path = "/" element= {<Home/>} />
-        <Route path = "/Members" element= {<Members/>} />
-        <Route path = "/NewEvents" element= {<NewEvents/>} />
-        <Route path = "/About" element= {<About/>} />
-      </Routes>
-    </div>
-
-    <div>
-
-    <form className = 'mx-auto border-2 p-9 md:p-12 w-72 md:w96 border-cyan-400 mt-36 h-84' onSubmit={submitHandler}>
-    <h3 className = 'pb-6 text-2xl text-center text-white'> SignUp</h3>
-    <label className = 'block mb-1 text-xl text-cyan-400' htmlFor='username'> Username</label>  
-    <input className = 'w-full h-8 p-1 mb-6 focus:outline-none' id='username' type='text' value={username} onChange={(e) => setUsername(e.target.value)}/> 
-    <label className = 'block mb-1 text-xl text-cyan-400' htmlFor='password'> Password</label>  
-    <input className = 'w-full h-8 p-1 mb-6 focus:outline-none' id='password' type='password' value={password} onChange={(e) => setPassword(e.target.value)}/> 
-    
-    <div className = 'flex justify-between'>
-        <button className='px-3 py-1 rounded-sm bg-cyan-400' type = 'button'> Cancel</button>
-        <button className='px-3 py-1 rounded-sm bg-cyan-400' type = 'submit'> Submit</button>
-
-    </div>
-    </form>  
-    </div>
-
-   
+    <Navbar/>
+        <div className = "container">
+          <Routes > 
+            <Route path = "/" element= {<Home/>} />
+            <Route path = "/Members" element= {<Members/>} />
+            <Route path = "/NewEvents" element= {<NewEvents/>} />
+            <Route path = "/About" element= {<About/>} />
+            <Route path = "/SignIn" element = {<SignIn/>}/>
+            <Route path = "/SignUp" element = {<SignUp/>}/>
+            <Route path = "/Profile" element = {<Profile/>}/>
+          </Routes >
+        </div>
     </>
   )
 }
