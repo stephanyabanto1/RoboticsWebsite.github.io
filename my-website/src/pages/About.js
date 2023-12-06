@@ -1,24 +1,47 @@
+import React from 'react';
+import "./About.css";
+import ContactForm from '../components/ContactForm';
+import RoboticsGroupImage from '../photos/RoboticsGroup.jpg'; 
 
-
-function About() {
-    return (
-    
-      <div className="about-us-container">
-      {/* <img src={RoboticsGroup} alt="photo" className="cute-image" /> */}
-      <h1>Welcome to Our Cute Website!</h1>
-      <p>
-        We are a team of passionate individuals dedicated to creating cute
-        content that brings joy to your life. Our goal is to make your day a
-        little brighter and happier with our adorable creations.
-      </p>
-      <p>
-        Whether you're a fan of cute animals, charming illustrations, or heartwarming
-        stories, you'll find something delightful here. Join us on this journey of
-        spreading cuteness and positivity!
-      </p>
-      <p>Thank you for being a part of our cute community!</p>
+const AboutUs = () => {
+  return (
+    <div className="about-us-container">
+      <header>
+        <h1>About Us</h1>
+      </header>
+      <div style={{ textAlign: 'center' }}>
+        <img
+          src={RoboticsGroupImage}
+          alt="Robotics Group"
+          style={{width: '80%', maxWidth: '100%', maxHeight: '400px', margin: '0 auto'}}
+        />
+      </div>
+      <section className="company-info">
+        <h2>Our Company</h2>
+        <p>
+          Welcome to [Your Company Name], where [brief description of your company].
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
+          [Continue with relevant details about your company].
+        </p>
+      </section>
+      <section className="team-info">
+        <h2>Our Team</h2>
+        <p>
+          Meet the talented individuals who make [Your Company Name] successful.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
+          [Introduce key team members and their roles].
+        </p>
+      </section>
+      <section className="contact-form">
+        <h2>Contact Us</h2>
+        <p>
+          Have any questions or inquiries? Reach out to us using the form below.
+        </p>
+       
+        <ContactForm/>
+      </section>
     </div>
   );
 };
 
-  export default About;
+export default AboutUs;
