@@ -10,7 +10,7 @@ const AboutUs = () => {
         <h1>About Us</h1>
       </header>
       <div style={{ textAlign: 'center' }}>
-        <img
+        <img className='image'
           src={RoboticsGroupImage}
           alt="Robotics Group"
           style={{width: '80%', maxWidth: '100%', maxHeight: '400px', margin: '0 auto'}}

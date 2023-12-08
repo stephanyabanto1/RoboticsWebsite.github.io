@@ -20,6 +20,8 @@ function SignUp(){
     setUser(res.data.username)
   })
  }
+
+ 
   return (
     <>
     <div>

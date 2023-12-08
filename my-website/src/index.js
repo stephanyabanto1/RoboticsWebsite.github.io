@@ -9,21 +9,6 @@ import SignUp from "./pages/SignUp";
 import Error from "./pages/Error";
 import Profile from "./pages/Profile";
 
-// const router = createBrowserRouter(
-//   createRoutesFromElements(
-//     <>
-//       <Route path = '' element = {<></>}/>,
-//       <Route path = '/Members' element= {<Members/>}/>,
-//       <Route path = '/SignUp' element={<SignUp />} />,
-//       <Route path = '/SignIn' element = {<SignIn/>}/>,
-//       <Route path = '/Profile' element = {<Profile/>}/>,
-//       <Route path = '*' element ={<Error/>}/>,
-
-//     </>
-
-//   )
-
-// );
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(

@@ -15,15 +15,17 @@ function App(){
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [post, setPost] = useState('')
 
  const submitHandler = e =>
  {
   e.preventDefault()
-  axios.post('http://localhost:3001/signup', {username: username, password: password})
+  axios.post('http://localhost:3001/signup', {username: username, password: password, post: post})
   .then((data) => {
     // console.log(data)
     setUsername('')
     setPassword('')
+    setPost('')
   })
  }
 
