@@ -1,9 +1,18 @@
-.termitomator{
-
-
+*{
+    box-sizing:border-box;
 }
-
-.image{
-
-    flex-direction: ;
+.header{
+    text-align: center;
+    font-size: 35;
+}
+.row{
+    display: -webkit-flex;
+    display:flex;
+}
+.column{
+    -webkit-flex:1;
+    -ms-flex:1;
+    flex:1;
+    padding:10px;
+    height:300px;
 }

@@ -4,6 +4,7 @@ const port = 3001; // or any other port you prefer
 const cors = require('cors');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
+const path = require("path")
 
 app.use(bodyParser.urlencoded({extended: false})); //parsing urlencoded data that comes from a form 
 app.use(bodyParser.json()); //parsing json data that comes in 
@@ -25,6 +26,8 @@ const db  = mysql.createConnection({
   password        : 'Rociotoro1!',
   database        : 'roboticsinformation'
 });
+
+
 
 //missing endpont [get]
 
@@ -53,8 +56,9 @@ function handleSignInFunction (request, response, middleware) {
 
     //Authenticate
     db.query(`select * from users where username='${username}'`, (err, result) => {
-      if (result[0].password == password) {
+      if (result[0]?.password == password) {
         console.log("Successful Login")
+        
         response.send(200)
         return
       } else {
@@ -87,6 +91,16 @@ app.get('/users', (req, res) => {
 
 
 })
+
+app.use(express.static(path.resolve("my-website","build")))
+app.use(express.static(path.resolve("my-website","public")))
+
+// app.get("/*", (req,res) => {
+//   // const p = path.resolve("my-website", "public","index.html")
+//   console.log("sending website")
+//   res.sendFile(p)
+// })
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
