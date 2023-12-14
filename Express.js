@@ -19,13 +19,13 @@ app.use(cors());
 //   database        : 'roboticsinformation'
 // });
 
-const db  = mysql.createConnection({
-  connectionLimit : 10,
-  host            : 'localhost',
-  user            : 'root',
-  password        : 'Rociotoro1!',
-  database        : 'roboticsinformation'
-});
+// const db  = mysql.createConnection({
+//   connectionLimit : 10,
+//   host            : 'localhost',
+//   user            : 'root',
+//   password        : 'Rociotoro1!',
+//   database        : 'roboticsinformation'
+// });
 
 
 
