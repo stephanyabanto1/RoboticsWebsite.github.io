@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node Express.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "cd f && npm install && npm run build"
+    "heroku-postbuild": "cd my-website && npm install && npm run build"
   },
   "author": "Stephany",
   "license": "MIT",
