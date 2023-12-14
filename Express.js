@@ -43,6 +43,32 @@ app.post('/signup', (req, res) => {
     } )
 });
 
+app.post('/signin', handleSignInFunction)
+
+function handleSignInFunction (request, response, middleware) {
+  try {
+  // Get data from the database
+    const username = request.body.username
+    const password = request.body.password
+
+    //Authenticate
+    db.query(`select * from users where username='${username}'`, (err, result) => {
+      if (result[0].password == password) {
+        console.log("Successful Login")
+        response.send(200)
+        return
+      } else {
+        console.log(`Authentication error for user ${username}`)
+        response.send(403)
+        return
+      }
+    })
+  } catch {
+    response.send(500)
+    return
+  }
+}
+
 function handleCallback(err, results, fields) { //just lke the arrow function 
   if(err){
     return console.log(err)
