@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3001; // or any other port you prefer
+const port = process.env.PORT || 3001 // or any other port you prefer
 const cors = require('cors');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
